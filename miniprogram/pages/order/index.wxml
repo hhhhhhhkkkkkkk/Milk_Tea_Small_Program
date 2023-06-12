@@ -1,0 +1,28 @@
+<view class="page">
+  <view class="order-area">
+    <view class=">{{ orders.length === 0 ? 'orderText' : '' }}">{{ orders.length === 0 ? '暂无订单' : '' }}</view>
+    <view wx:if="{{ orders }}" wx:for="{{ orders }}" wx:key="index" wx:for-item="order" class="order-box">
+      <view class="info-top">
+        <view bindtap="shopGoods" class="shop">
+          <view class="shop-name">{{ order.shop_name }}</view>
+          <image src="../../assets/icons/arrow-right.svg"></image>
+        </view>
+        <view class="state">
+          {{ order.state }}
+        </view>
+      </view>
+      <scroll-view class="info-middle" scroll-x>
+        <image wx:for="{{ order.pic }}" wx:key="index" wx:for-item="pic" src="{{ pic }}" mode=""/>
+      </scroll-view>
+      <view class="info-bottom">
+        <view class="time">
+          {{ order.time }}
+        </view>
+        <view class="number-price">
+          <view class="number">共{{ order.number }}件</view>
+          <view class="price">￥{{ order.price }}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

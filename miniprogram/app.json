@@ -1,0 +1,59 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/store/index",
+    "pages/menu/index",
+    "pages/order/index",
+    "pages/me/index",
+    "pages/web-view/index",
+    "pages/product/detail",
+    "pages/login/index",
+    "pages/custom-page/index"
+  ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "您的位置信息将用于给您匹配最佳门店"
+    }
+  },
+  "requiredPrivateInfos": [
+    "getLocation"
+  ],
+  "window": {
+    "backgroundColor": "#fefefe",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "HK奶茶",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#797979",
+    "selectedColor": "#ffc7cf",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "首页",
+      "iconPath": "./assets/images/home.png",
+      "selectedIconPath": "./assets/images/home-selected.png"
+    }, 
+    {
+      "pagePath": "pages/store/index",
+      "text": "点餐",
+      "iconPath": "./assets/images/menu.png",
+      "selectedIconPath": "./assets/images/menu-selected.png"
+    }, 
+    {
+      "pagePath": "pages/order/index",
+      "text": "订单",
+      "iconPath": "./assets/images/order.png",
+      "selectedIconPath": "./assets/images/order-selected.png"
+    }, 
+    {
+      "pagePath": "pages/me/index",
+      "text": "我的",
+      "iconPath": "./assets/images/me.png",
+      "selectedIconPath": "./assets/images/me-selected.png"
+    }
+  ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

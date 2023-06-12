@@ -1,0 +1,30 @@
+<view class="goods-detail">
+  <view class="goods-info">
+    <image class="goods-cover" src="{{ goodsDetail.cover }}"></image>
+    <view class="meta">
+      <view class="title">{{ goodsDetail.name }}</view>
+      <view class="description">{{ goodsDetail.description }}</view>
+    </view>
+  </view>
+  <view class="specs-area">
+    <view wx:for="{{ specsCategories }}" wx:for-index="specsCategoryIndex" wx:key="index" wx:for-item="specsCategory" class="specs-category">
+      <view class="label">{{ specsCategory.label }}</view>
+      <view class="specs-list">
+        <view wx:for="{{ specsCategory.specs }}"  wx:key="unique" class="specs {{ specsCategory.specsIndex === index ? 'selected': '' }}"
+         bindtap="onSpecsTap" data-specs="{{ item }}" data-specs-category-index="{{ specsCategoryIndex }}"
+        >
+          {{ item.label }} {{ item.price === 0 ? '': ('￥' + item.price)  }}
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="action-area">
+    <view class="price">
+      <view class="unit">￥</view>
+      {{totalPrice}}
+    </view>
+    <view class="cart-btn" bindtap="add">加入购物车</view>
+  </view>
+
+</view>

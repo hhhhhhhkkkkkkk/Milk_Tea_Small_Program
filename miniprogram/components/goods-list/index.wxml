@@ -1,0 +1,23 @@
+<scroll-view id="menu-list" class="menu-list" scroll-into-view="section-{{ current }}" 	scroll-with-animation="true" bindscroll="onScroll" scroll-y show-scrollbar="{{ false }}" enhanced>
+  <slot name="before"></slot>
+  <view class="list">
+    <view wx:for="{{ list }}" wx:for-item="goodsCategory" wx:key="index" class="section" id="section-{{ index }}" data-index="{{ index }}">
+      <view class="section-header">
+        {{ goodsCategory.name }}
+      </view>
+      <view class="section-list">
+        <view class="item" wx:for="{{ goodsCategory.goodsList }}" wx:key="index" wx:for-item="goods">
+          <image src="{{ goods.cover }}" mode=""></image>
+          <view class="info">
+            <view class="name">{{ goods.name }}</view>
+            <view class="description">{{ goods.description }}</view>
+            <view class="price">￥{{ goods.price }}</view>
+          </view>
+          <view bindtap="showCart" data-goods="{{ goods }}" class="add-icon">
+            <image src="../../assets/icons/plus.svg" mode=""></image>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</scroll-view>

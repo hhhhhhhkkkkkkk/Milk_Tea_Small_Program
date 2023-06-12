@@ -1,0 +1,33 @@
+<view class="page">
+<!-- 轮播图 -->
+  <force-swiper list="{{ swiperList }}" style="width: 100vw; height: 630rpx;" dotStyle="left: 50rpx; bottom: 58rpx;" round></force-swiper>
+<!-- 会员卡积分 -->
+  <view class="member-area">
+    <view class="vip-box">
+      <image src="../../assets/images/vip-pic.png" mode=""></image>
+      <view class="meta">
+        <view class="title">{{ user ? 'HK会员' : '尊敬的用户' }}</view>
+        <progress-bar wx:if="{{ user }}" value="{{ 33 }}" width="320rpx"/>
+        <view class="tips">{{ user ? '再升1级可享【升级礼包】等6项权益' : '会员可享【限时优惠】等多项权益' }}</view>
+      </view>
+    </view>
+    <view wx:if="{{ user }}" class="coin-box">
+      <image src="../../assets/images/coin.png" mode="aspectFill"></image>
+      <view class="currency">30</view>
+    </view>
+    <view wx:if="{{ !user }}" class="login-btn" bindtap="gotoLogin">授权登录</view>
+  </view>
+  <!-- 点餐 -->
+  <view class="menu-banner">
+    <view class="location">
+      <image src="../../assets/images/menu.png" mode=""></image>
+      <view class="name">{{ nearbyStore ? nearbyStore : "附近暂无门店" }}</view>
+    </view>
+    <image class="menu-card" src="../../assets/images/menu-banner.jpg" bindtap="onMenuCardClick"></image>
+  </view>
+  <view class="banner-list">
+    <image class="banner" src="../../assets/images/banner-1.jpg" bindtap="onArticleClick"></image>
+    <image class="banner" src="../../assets/images/banner-2.jpg" bindtap="unfinished"></image>
+    <image class="banner" src="../../assets/images/banner-3.jpg" bindtap="onMagic"></image>
+  </view>
+</view>

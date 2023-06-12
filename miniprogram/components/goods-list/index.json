@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "cart-bar": "../../components/cart-bar/index"
+  }
+}

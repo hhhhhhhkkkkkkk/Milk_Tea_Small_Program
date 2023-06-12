@@ -1,0 +1,36 @@
+<view class="header" style="{{ headerStyle }}">
+  <image class="back-icon" bindtap="switchCurrentStore" src="../../assets/icons/arrow-left.svg" mode=""></image>
+  <view class="search-input">
+    <image class="search-icon" src="../../assets/icons/search.svg" mode=""></image>
+    <input placeholder="请输入商品名" />
+  </view>
+</view>
+<view class="menu-info">
+  <view class="store-info">
+    <view class="store-name" bindtap="switchCurrentStore">
+      {{ storeList.storeName }}
+      <image src="../../assets/icons/arrow-right.svg"></image>
+    </view>
+    <view class="store-location">
+      <image class="location-icon" src="../../assets/icons/location.svg"></image>
+      <view class="distance-info">
+        距离您 <view style="color: red; margin-left: 4rpx">{{ storeList.storeDistance }}km</view>
+      </view>
+    </view>
+  </view>
+  <view class="trade-type">
+    自提
+  </view>
+</view>
+<view class="menu">
+  <sidebar list="{{ goodsList }}" bind:on-change="onSideBarChange" defaultCurrent="{{ sidebarCurrent }}"></sidebar>
+  <goods-list list="{{ goodsList }}" current="{{ currentCategoryIndex }}" bind:on-change="onGoodsListChange" bind:goodsDetail="goodsDetail" bind:goodsDialogShow="goodsDialogShow">
+    <view slot="before">
+      <force-swiper style="width: 538rpx; height: 266rpx;" dotStyle="bottom: 12rpx;" list="{{ swiperList }}"></force-swiper>
+    </view>
+  </goods-list>
+</view>
+<cart-bar storeList="{{ storeList }}" goodsCart="{{ goodsCart }}" bind:goodsAdd="goodsAdd" bind:goodsReduce="goodsReduce"></cart-bar>
+<dialog show="{{ goodsDialogShow }}">
+  <goods-detail goodsDetail="{{ goodsDetail }}" goodsCart="{{ goodsCart }}" bind:goodsDialogShow="goodsDialogShow" bind:goodsCart="goodsCart"></goods-detail>
+</dialog>

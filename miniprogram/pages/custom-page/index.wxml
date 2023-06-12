@@ -1,0 +1,4 @@
+<view class="custom-page">
+  <rich-text nodes="{{ page.content }}"></rich-text>
+</view>
+

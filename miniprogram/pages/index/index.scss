@@ -1,0 +1,110 @@
+@import '../../style/theme.scss';
+
+
+.member-area {
+  z-index: 2;
+  margin-top: -40rpx;
+  width: 688rpx;
+  height: 174rpx;
+  border-radius: 16rpx;
+  background-color: #fff;
+  overflow: hidden;
+  box-shadow: 0px 0px 8px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  margin-bottom: 44rpx;
+  .vip-box {
+    display: flex;
+    image {
+      width: 100rpx;
+      height: 100rpx;
+      border-radius: 50rpx;
+      overflow: hidden;
+      margin-right: 26rpx;
+      flex-shrink: 0;
+    }
+    .meta {
+      .title {
+        font-size: 32rpx;
+        font-weight: bold;
+        margin-bottom: 18rpx;
+      }
+      .tips {
+        margin-top: 14rpx;
+        color: $gray-text-color;
+        font-size: 24rpx;
+      }
+    }
+  }
+  .coin-box {
+    display: flex;
+    flex-direction: column;
+    image {
+      width: 118rpx;
+      height: 70rpx;
+    }
+    .currency {
+      margin-top: 12rpx;
+      margin-left: 27rpx;
+      color: #d32d25;
+    }
+  }
+  .login-btn {
+    width: 150rpx;
+    height: 65rpx;
+    border-radius: 10rpx;
+    background-color: $primary-color;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25rpx;
+    &:active {
+      opacity: 0.6;
+    }
+  }
+}
+
+.menu-banner {
+  width: 100%;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  margin-bottom: 36rpx;
+  .location {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15rpx;
+    image {
+      width: 24rpx;
+      height: 24rpx;
+    }
+    .name {
+      font-size: 22rpx;
+      margin-left: 14rpx;
+    }
+  }
+  .menu-card {
+    width: 688rpx;
+    height: 340rpx;
+    box-shadow: 0px 0px 8px rgba(0,0,0,0.1);
+    border-radius: 16rpx;
+  }
+}
+
+.banner-list {
+  display: flex;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+  width: 100%;
+  justify-content: space-between;
+  .banner {
+    width: 216rpx;
+    height: 160rpx;
+    box-shadow: 0px 0px 8px rgba(0,0,0,0.1);
+    border-radius: 16rpx;
+  }
+}

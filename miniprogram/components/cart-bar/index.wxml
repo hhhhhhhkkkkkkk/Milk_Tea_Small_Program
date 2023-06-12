@@ -1,0 +1,31 @@
+<view class="chart-bar">
+  <image bindtap="onClickBag" class="chart-icon" src="../../assets/images/cart.png"></image>
+  <view class="summary">
+    合计：<view style="font-weight: bold;">￥</view> <view class="price">{{ goodsCart[goodsCart.length-1] }}</view>
+  </view>
+  <view bindtap="settlement" class="checkout-btn {{ goodsCart.length === 0 || goodsCart[goodsCart.length-1] === 0 ? 'disabled' : '' }}">
+    去结算
+  </view>
+</view>
+
+<view wx:if="{{ showList }}" class="order-list">
+  <view class="item" wx:for="{{ goodsCart }}" wx:key="index" wx:for-item="goods">
+    <image class="pic" src="{{ goods.cover }}"></image>
+    <view class="info">
+      <view class="label">{{ goods.name }}</view>
+      <view class="specs" wx:for="{{ goods.specs }}" wx:key="index">
+        {{ goods.specs[index] }}
+      </view>
+      <view class="price">￥<view class="value">{{ goods.price }}</view></view>
+    </view>
+    <view data-goods="{{ goods }}" bindtap="reduceNumber" class="reduce">
+      <image src="../../assets/icons/reduce.svg" mode=""/>
+    </view>
+    <view class="number">
+     {{ goods.number }} 
+    </view>
+    <view data-goods="{{ goods }}" bindtap="addNumber" class="add">
+      <image src="../../assets/icons/plus.svg" mode=""/>
+    </view>
+  </view>
+</view>

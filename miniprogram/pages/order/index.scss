@@ -1,0 +1,82 @@
+/* pages/order/index.wxss */
+@import '../../style/theme.scss';
+.order-area {
+  background: linear-gradient(to bottom, #f1f1f1, #f1f1f1);
+  width: 100%;
+  height: 100vh;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+  .orderText {
+    display: flex;
+    justify-content: center;
+    margin-top: 300rpx;
+    color: $gray-text-color;
+    font-size: 40rpx;
+  }
+  .order-box {
+    margin-top: 20rpx;
+    width: 100%;
+    height: 250rpx;
+    background-color: white;
+    border-radius: 15rpx;
+    .info-top {
+      padding: 10rpx 20rpx;
+      display: flex;
+      justify-content: space-between;
+      .shop {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .shop-name{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 30rpx;
+          font-weight: 600;
+        }
+        image {
+          margin-left: 8rpx;
+          width: 12rpx;
+          height: 20rpx;
+        }
+      }
+      .state {
+        font-size: 28rpx;
+        color: $gray-text-color;
+      }
+    }
+    .info-middle {
+      white-space: nowrap;
+      padding: 0rpx 20rpx;
+      max-width: 560rpx;
+      image {
+        display: inline-block;
+        width: 130rpx;
+        height: 130rpx;
+        border-radius: 20rpx;
+        margin-right: 10rpx;
+      }
+    }
+    .info-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 0rpx 20rpx;
+      .time {
+        font-size: 25rpx;
+        color: $gray-text-color;
+      }
+      .number-price {
+        display: flex;
+        align-items: baseline;
+        .number {
+          font-size: 25rpx;
+          color: $gray-text-color;
+        }
+        .price {
+          font-size: 32rpx;
+        }
+      }
+    }
+  }
+}
